@@ -1,38 +1,46 @@
 .App {
   text-align: center;
+  border: 0.25px solid #e4000f;
+  background-color: #e4000f;
+  font-family: 'Futura';
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.PokemonContainer {
+  height: 40vh;
+  width: 80vw;
+  background-color: #e9e0c9;
+  margin: 10vh auto;
+  border-radius: 50%;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.PokemonContainer img {
+  height: 25vh;
+  padding: 7.5vh 0;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.InputComponent {
   display: flex;
+  width: 80vw;
+  margin: 5vh auto;
+  flex-wrap: nowrap;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.InputField {
+  width: 80%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.input-label {
+  color: #e9e0c9;
+  font-size: 1.5rem;
+}
+
+.input-textBox {
+  border-radius: 20px;
+  width: 80%;
+  height: 5vh;
+  padding-left: 3vw;
+  border: none;
+  font-size: 1.5rem;
+  margin: 5vh auto;
 }
