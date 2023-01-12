@@ -1,21 +1,19 @@
-import React, { useState } from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom';
 
-function InputField () {
-    const [guess, setGuess] = useState('')
-    const handleChange = (event) => {
-        setGuess(event.target.value);
-    }
+function InputField (props) {
+    
 
     return (
         <div>
             <label className="input-label">
                 Guess the Pokemon:
                 <input 
+                    name='guess'
                     className="input-textBox"
                     type="text"
-                    value={guess}
-                    onChange={handleChange}
+                    value={props.guess}
+                    onChange={props.handleChange}
                 />
             </label>
         </div>
