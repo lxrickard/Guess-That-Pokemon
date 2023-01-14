@@ -1,10 +1,3 @@
-  // need to write state for the correct/incorrect state. 
-  // I belive setting it equal to null and then running the evaluation to either be true or false. 
-  // Setting css according to the true and false will be good. 
-  // Using a class of .true and .false will be sufficient in the rendering with logic functions. 
-  // Need app to manage this and have props passed down to SearchButton
-
-
 import React, { useEffect, useState } from 'react';
 import './App.css';
 import Pokemon from './Components/Pokemon';
@@ -18,10 +11,12 @@ function App() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    // console.log(guess);
     if(guess.toLowerCase() === data.name) {
       setCorrect(true);
     } else {
       setCorrect(false);
+      console.log(data.name)
     }
     setGuess('')
   }
@@ -46,7 +41,7 @@ function App() {
     <div className="App">
         <Pokemon data={data} correct={correct}/>
      <form onSubmit={handleSubmit} className="InputComponent">
-        <InputField guess={guess} handleChange={handleChange}/>
+        <InputField guess={guess} handleChange={handleChange} correct={correct}/>
         <SearchButton handleSubmit={handleSubmit} guess={guess} />
       </form>
     </div>
