@@ -1,8 +1,8 @@
 .App {
   text-align: center;
   border: 0.25px solid #0084ff;
-  background-color: #0084ff;
-  font-family: 'Futura';
+  background: linear-gradient(to bottom, #5a5aff, #0084ff);
+  font-family: 'Poppins';
 }
 .incorrect {
   background: red;
@@ -11,6 +11,7 @@
 .PokemonContainer {
   height: 40vh;
   width: 80vw;
+  max-width: 300px;
   background-color: #e9e0c9;
   margin: 10vh auto;
   border-radius: 50%;
@@ -49,6 +50,7 @@
 .input-textBox {
   border-radius: 20px;
   width: 80%;
+  max-width: 400px;
   height: 5vh;
   padding-left: 3vw;
   border: none;
