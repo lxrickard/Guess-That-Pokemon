@@ -9,23 +9,8 @@ function App() {
   const [guess, setGuess] = useState('');
   const [correct, setCorrect] = useState(null);
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    // console.log(guess);
-    if(guess.toLowerCase() === data.name) {
-      setCorrect(true);
-    } else {
-      setCorrect(false);
-      console.log(data.name)
-    }
-    setGuess('')
-  }
-
-  const handleChange = (event) => {
-    setGuess(event.target.value.toLowerCase());
-  };
-  useEffect( () => {
-    const random = Math.floor(Math.random() * 901 ) + 1;
+  const fetchRandomPokemon = () => {
+    let random = Math.floor(Math.random() * 901 ) + 1;
 
     fetch(`https://pokeapi.co/api/v2/pokemon/${random}`)
       .then((response) => response.json() )
@@ -35,6 +20,29 @@ function App() {
       .catch((error) => {
         console.error(error);
       });
+}
+
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    // console.log(guess);
+    if(guess.toLowerCase() === data.name) {
+      setCorrect(true);
+    } else {
+      setCorrect(false);
+      // console.log(data.name);
+    }
+    setGuess('');
+    fetchRandomPokemon();
+    console.log(`the new data is: ${data.name}`);
+  }
+
+  const handleChange = (event) => {
+    setGuess(event.target.value.toLowerCase());
+  };
+
+  useEffect( () => {
+    fetchRandomPokemon()
   }, []);
 
   return (
